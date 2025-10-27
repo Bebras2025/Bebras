@@ -16,7 +16,7 @@ export default function Header({ onNavigate, currentPage }: HeaderProps) {
           >
             <div className="text-3xl">🦫</div>
             <div>
-              <h1 className="text-xl font-bold">Bebras 2025</h1>
+              <h1 className="text-xl font-bold">Bebras 2025 11º-12º</h1>
               <p className="text-xs text-teal-100">Castor Informático</p>
             </div>
           </button>
