@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <title>Castor - Bebras</title>
+  <g fill="none" fill-rule="evenodd">
+    <circle cx="100" cy="100" r="98" fill="#f4a261"/>
+    <g transform="translate(40,45)" fill="#3a2f2f">
+      <ellipse cx="60" cy="70" rx="56" ry="50" fill="#6b4f3a"/>
+      <circle cx="40" cy="40" r="8" fill="#fff"/>
+      <circle cx="80" cy="40" r="8" fill="#fff"/>
+      <circle cx="40" cy="40" r="4" fill="#000"/>
+      <circle cx="80" cy="40" r="4" fill="#000"/>
+      <path d="M32 60 Q60 86 88 60" fill="#f1c27d"/>
+      <rect x="52" y="78" width="12" height="10" rx="2" fill="#fff"/>
+      <path d="M10 70 C2 78 2 92 10 100 L0 110 L28 102" fill="#a86b42"/>
+    </g>
+  </g>
+</svg>
