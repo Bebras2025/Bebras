@@ -8,9 +8,7 @@ interface QuizProps {
 
 export default function Quiz({ onNavigate }: QuizProps) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [answers, setAnswers] = useState<(number | null)[]>(Array(questions.length).fill(null));
-  const [quizCompleted, setQuizCompleted] = useState(false);
   const [showResults, setShowResults] = useState(false);
 
   useEffect(() => {
@@ -19,7 +17,6 @@ export default function Quiz({ onNavigate }: QuizProps) {
       const data = JSON.parse(saved);
       setCurrentQuestion(data.currentQuestion || 0);
       setAnswers(data.answers || Array(questions.length).fill(null));
-      setQuizCompleted(data.quizCompleted || false);
       setShowResults(data.showResults || false);
     }
   }, []);
@@ -29,21 +26,17 @@ export default function Quiz({ onNavigate }: QuizProps) {
       localStorage.setItem('bebras-quiz-progress', JSON.stringify({
         currentQuestion,
         answers,
-        quizCompleted,
         showResults
       }));
     }
-  }, [currentQuestion, answers, quizCompleted, showResults]);
-
-  useEffect(() => {
-    setSelectedAnswer(answers[currentQuestion]);
-  }, [currentQuestion, answers]);
+  }, [currentQuestion, answers, showResults]);
 
   const handleAnswerSelect = (answerIndex: number) => {
-    setSelectedAnswer(answerIndex);
-    const newAnswers = [...answers];
-    newAnswers[currentQuestion] = answerIndex;
-    setAnswers(newAnswers);
+    if (answers[currentQuestion] === null) {
+      const newAnswers = [...answers];
+      newAnswers[currentQuestion] = answerIndex;
+      setAnswers(newAnswers);
+    }
   };
 
   const handlePrevious = () => {
@@ -59,15 +52,12 @@ export default function Quiz({ onNavigate }: QuizProps) {
   };
 
   const handleSubmitQuiz = () => {
-    setQuizCompleted(true);
     setShowResults(true);
   };
 
   const handleRestart = () => {
     setCurrentQuestion(0);
-    setSelectedAnswer(null);
     setAnswers(Array(questions.length).fill(null));
-    setQuizCompleted(false);
     setShowResults(false);
     localStorage.removeItem('bebras-quiz-progress');
   };
@@ -199,6 +189,7 @@ export default function Quiz({ onNavigate }: QuizProps) {
   const question = questions[currentQuestion];
   const allAnswered = answers.every(answer => answer !== null);
   const isLastQuestion = currentQuestion === questions.length - 1;
+  const currentAnswer = answers[currentQuestion];
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
@@ -243,17 +234,21 @@ export default function Quiz({ onNavigate }: QuizProps) {
 
             <div className="space-y-4 mb-6">
               {question.options.map((option, index) => {
-                const isSelected = selectedAnswer === index;
+                const isSelected = currentAnswer === index;
+                const isAnswered = currentAnswer !== null;
 
                 return (
                   <button
                     key={index}
                     onClick={() => handleAnswerSelect(index)}
+                    disabled={isAnswered}
                     className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
                       isSelected
-                        ? 'border-teal-500 bg-teal-50'
-                        : 'border-gray-200 hover:border-teal-300 hover:bg-gray-50'
-                    } cursor-pointer`}
+                        ? 'border-teal-500 bg-teal-50 cursor-not-allowed'
+                        : isAnswered
+                        ? 'border-gray-200 bg-gray-50 cursor-not-allowed'
+                        : 'border-gray-200 hover:border-teal-300 hover:bg-gray-50 cursor-pointer'
+                    }`}
                   >
                     <div className="flex items-center justify-between">
                       <span className="font-medium">{option}</span>
@@ -267,6 +262,14 @@ export default function Quiz({ onNavigate }: QuizProps) {
                 );
               })}
             </div>
+
+            {currentAnswer !== null && (
+              <div className="mb-6 p-4 bg-teal-50 border-2 border-teal-500 rounded-lg">
+                <p className="text-sm text-teal-800 font-semibold">
+                  ✓ Resposta gravada. Não pode ser alterada.
+                </p>
+              </div>
+            )}
 
             <div className="flex gap-4">
               <button
