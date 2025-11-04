@@ -22,21 +22,17 @@ export default function Quiz({ onNavigate }: QuizProps) {
   }, []);
 
   useEffect(() => {
-    if (!showResults) {
-      localStorage.setItem('bebras-quiz-progress', JSON.stringify({
-        currentQuestion,
-        answers,
-        showResults
-      }));
-    }
+    localStorage.setItem('bebras-quiz-progress', JSON.stringify({
+      currentQuestion,
+      answers,
+      showResults
+    }));
   }, [currentQuestion, answers, showResults]);
 
   const handleAnswerSelect = (answerIndex: number) => {
-    if (answers[currentQuestion] === null) {
-      const newAnswers = [...answers];
-      newAnswers[currentQuestion] = answerIndex;
-      setAnswers(newAnswers);
-    }
+    const newAnswers = [...answers];
+    newAnswers[currentQuestion] = answerIndex;
+    setAnswers(newAnswers);
   };
 
   const handlePrevious = () => {
@@ -235,18 +231,14 @@ export default function Quiz({ onNavigate }: QuizProps) {
             <div className="space-y-4 mb-6">
               {question.options.map((option, index) => {
                 const isSelected = currentAnswer === index;
-                const isAnswered = currentAnswer !== null;
 
                 return (
                   <button
                     key={index}
                     onClick={() => handleAnswerSelect(index)}
-                    disabled={isAnswered}
                     className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
                       isSelected
-                        ? 'border-teal-500 bg-teal-50 cursor-not-allowed'
-                        : isAnswered
-                        ? 'border-gray-200 bg-gray-50 cursor-not-allowed'
+                        ? 'border-teal-500 bg-teal-50'
                         : 'border-gray-200 hover:border-teal-300 hover:bg-gray-50 cursor-pointer'
                     }`}
                   >
@@ -262,14 +254,6 @@ export default function Quiz({ onNavigate }: QuizProps) {
                 );
               })}
             </div>
-
-            {currentAnswer !== null && (
-              <div className="mb-6 p-4 bg-teal-50 border-2 border-teal-500 rounded-lg">
-                <p className="text-sm text-teal-800 font-semibold">
-                  ✓ Resposta gravada. Não pode ser alterada.
-                </p>
-              </div>
-            )}
 
             <div className="flex gap-4">
               <button
