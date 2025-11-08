@@ -117,6 +117,16 @@ export default function Quiz({ onNavigate }: QuizProps) {
                       )}
                     </div>
 
+                    {q.imageUrl && (
+                      <div className="mb-4 rounded-lg overflow-hidden">
+                        <img
+                          src={q.imageUrl}
+                          alt={q.imageAlt || q.title}
+                          className="w-full h-48 object-cover"
+                        />
+                      </div>
+                    )}
+
                     <p className="text-gray-700 mb-4">{q.statement}</p>
 
                     <div className="space-y-2 mb-4">
@@ -226,6 +236,17 @@ export default function Quiz({ onNavigate }: QuizProps) {
 
           <div className="bg-white rounded-xl shadow-lg p-8">
             <h2 className="text-3xl font-bold text-gray-800 mb-6">{question.title}</h2>
+
+            {question.imageUrl && (
+              <div className="mb-8 rounded-lg overflow-hidden">
+                <img
+                  src={question.imageUrl}
+                  alt={question.imageAlt || question.title}
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+            )}
+
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">{question.statement}</p>
 
             <div className="space-y-4 mb-6">

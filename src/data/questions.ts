@@ -14,7 +14,9 @@ export const questions: Question[] = [
     correctAnswer: 2,
     explanation: "A resposta C está correta porque o balde nunca fica vazio quando Bruno precisa de uma porca, e no final não sobram porcas no balde.",
     computationalThinking: "Esta tarefa destaca a utilização de um autómato com pilha (pushdown automaton). Um PDA é uma forma de descrever um algoritmo que se baseia no estado atual e tem memória sob a forma de uma pilha. Nesta tarefa, o estado é ter uma porca ou parafuso no tapete, e a pilha é o balde que contém as porcas.",
-    difficulty: 'fácil'
+    difficulty: 'fácil',
+    imageUrl: "https://images.pexels.com/photos/5707255/pexels-photo-5707255.jpeg",
+    imageAlt: "Montagem industrial com ferramentas"
   },
   {
     id: 2,
@@ -29,7 +31,9 @@ export const questions: Question[] = [
     correctAnswer: 3,
     explanation: "A resposta correta é Sexta-feira. Na terça-feira, C e G começam a usar. Na quarta-feira, B começa. Na quinta-feira, E começa. E na sexta-feira F e H começam a usar a alcunha.",
     computationalThinking: "As redes sociais têm um papel fundamental na difusão de informação. Esta tarefa considera um modelo de difusão chamado modelo de limite, onde existe um limiar para cada indivíduo (a fração das suas ligações que deve estar ativa para que o indivíduo se torne ativo).",
-    difficulty: 'fácil'
+    difficulty: 'fácil',
+    imageUrl: "https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg",
+    imageAlt: "Escola com estudantes"
   },
   {
     id: 3,
@@ -44,7 +48,9 @@ export const questions: Question[] = [
     correctAnswer: 2,
     explanation: "A resposta C está correta porque o jogador O venceu e depois o jogo terminou, respeitando todas as regras do jogo.",
     computationalThinking: "Resolvemos verificando se as imagens eram plausíveis. A partir das regras do jogo, podemos deduzir regras sobre a estrutura de uma folha de resultados válida. As regras são muito importantes nos sistemas computacionais de processamento de dados.",
-    difficulty: 'fácil'
+    difficulty: 'fácil',
+    imageUrl: "https://images.pexels.com/photos/5632400/pexels-photo-5632400.jpeg",
+    imageAlt: "Jogo do galo em papel"
   },
   {
     id: 4,
@@ -59,7 +65,9 @@ export const questions: Question[] = [
     correctAnswer: 3,
     explanation: "A resposta correta é E → C → F → B → A → D. Se o castor α encontra pedaços do castor β, então β está a montante de α.",
     computationalThinking: "Um grafo acíclico dirigido (DAG) consiste em vértices e arestas direcionadas sem ciclos. Alinhar os castores na ordem correta chama-se ordenação topológica. Esta é utilizada em processamento de agendamentos, serialização de dados e resolução de dependências.",
-    difficulty: 'fácil'
+    difficulty: 'fácil',
+    imageUrl: "https://images.pexels.com/photos/3807514/pexels-photo-3807514.jpeg",
+    imageAlt: "Barragem de castor num rio"
   },
   {
     id: 5,
@@ -74,7 +82,9 @@ export const questions: Question[] = [
     correctAnswer: 0,
     explanation: "A resposta correta é 5 anos. A espera máxima ocorre quando Y é 7 (velas vermelhas 1,4,7) e a próxima idade com mesma cor é 5 anos depois.",
     computationalThinking: "Esta tarefa é um exemplo de análise de algoritmo. É-nos dado um algoritmo que gera uma sequência de pares de cores. Demoraria demasiado simular toda a sequência, pelo que devemos analisar as propriedades do algoritmo.",
-    difficulty: 'fácil'
+    difficulty: 'fácil',
+    imageUrl: "https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg",
+    imageAlt: "Bolo de aniversário com velas"
   },
   {
     id: 6,
@@ -89,7 +99,9 @@ export const questions: Question[] = [
     correctAnswer: 1,
     explanation: "A resposta B não é possível. As regras de transformação criam sempre uma poção e um dragão ao mesmo tempo, portanto o número de poções será sempre igual ao número de dragões.",
     computationalThinking: "As transformações mágicas podem ser vistas como um conjunto de regras para gerar padrões. Em ciência de computadores, uma gramática livre de contexto é uma ferramenta usada para descrever regras que geram padrões e linguagens.",
-    difficulty: 'média'
+    difficulty: 'média',
+    imageUrl: "https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg",
+    imageAlt: "Castelo medieval"
   },
   {
     id: 7,
@@ -104,7 +116,9 @@ export const questions: Question[] = [
     correctAnswer: 2,
     explanation: "A resposta correta é X=5. Com X=5, a Casa 1 é atribuída a Cenourolândia, e a Casa 2 é atribuída a Morangolândia porque três dos seus cinco vizinhos mais próximos são de Morangolândia.",
     computationalThinking: "A regra para atribuir casas é um exemplo do algoritmo k-nearest neighbors (kNN). O kNN classifica dados novos olhando para os k dados mais semelhantes já classificados. É usado em aprendizagem automática por ser fácil de implementar.",
-    difficulty: 'média'
+    difficulty: 'média',
+    imageUrl: "https://images.pexels.com/photos/3945687/pexels-photo-3945687.jpeg",
+    imageAlt: "Aldeias com casas"
   },
   {
     id: 8,
@@ -119,7 +133,9 @@ export const questions: Question[] = [
     correctAnswer: 2,
     explanation: "A resposta correta é 18 segundos. O caminho ótimo inclui uma mudança de piso e movimentos dentro dos pisos para chegar de A a B.",
     computationalThinking: "O problema do caminho mais curto é bem estudado em teoria de grafos. O algoritmo de Dijkstra é um método conhecido para resolvê-lo. Aplicações incluem encontrar caminhos em redes informáticas e no desenho de circuitos VLSI.",
-    difficulty: 'média'
+    difficulty: 'média',
+    imageUrl: "https://images.pexels.com/photos/5632398/pexels-photo-5632398.jpeg",
+    imageAlt: "Labirinto"
   },
   {
     id: 9,
@@ -134,7 +150,9 @@ export const questions: Question[] = [
     correctAnswer: 3,
     explanation: "(C 3)=4, portanto (B (C 3))=(B 4)=3, então (A (B (C 3)))=(A 3)=4.",
     computationalThinking: "Estruturas de dados que contêm listas são essenciais para programação. As estruturas podem ser interligadas, de modo que um elemento de uma lista pode descrever uma posição noutra lista. Esta forma indireta de descrever posições é um conceito poderoso.",
-    difficulty: 'média'
+    difficulty: 'média',
+    imageUrl: "https://images.pexels.com/photos/5632397/pexels-photo-5632397.jpeg",
+    imageAlt: "Estruturas de dados"
   },
   {
     id: 10,
@@ -149,7 +167,9 @@ export const questions: Question[] = [
     correctAnswer: 2,
     explanation: "b11=1 significa macho, b10=0 significa pesar no máximo 63 kg, b9=1 e b7=1 significa pesar pelo menos 40 kg, e não(b3 e b2) exclui apenas educação de jovens castores.",
     computationalThinking: "Uma expressão booleana pode ser usada para consultar bases de dados simples. Os operadores booleanos não, e, ou são fundamentais. Os circuitos booleanos estão na base de componentes digitais usados em computadores.",
-    difficulty: 'média'
+    difficulty: 'média',
+    imageUrl: "https://images.pexels.com/photos/5632396/pexels-photo-5632396.jpeg",
+    imageAlt: "Base de dados digital"
   },
   {
     id: 11,
@@ -164,7 +184,9 @@ export const questions: Question[] = [
     correctAnswer: 2,
     explanation: "Após o novo exemplo, o limite inferior muda para 53.5 (ponto médio entre 42 e 65). Portanto, 48 é não castor e 84 é castor.",
     computationalThinking: "O sistema aplica um algoritmo de Aprendizagem Automática (Machine Learning). Os algoritmos ML constroem modelos baseados em dados de treino para fazer previsões. A qualidade depende fortemente da qualidade dos dados de formação.",
-    difficulty: 'difícil'
+    difficulty: 'difícil',
+    imageUrl: "https://images.pexels.com/photos/5632395/pexels-photo-5632395.jpeg",
+    imageAlt: "Inteligência artificial"
   },
   {
     id: 12,
@@ -179,7 +201,9 @@ export const questions: Question[] = [
     correctAnswer: 1,
     explanation: "A resposta correta é o Segmento 2. Cortando o Segmento 2, Bruno pode forçar o Rui numa posição perdedora independentemente das jogadas do Rui.",
     computationalThinking: "O jogo Hackenbush pertence aos jogos combinatórios. Áreas de interesse incluem determinar o vencedor com jogo perfeito, formular estratégias e criar heurísticas. As árvores de jogo enumeram posições possíveis em cada jogada.",
-    difficulty: 'difícil'
+    difficulty: 'difícil',
+    imageUrl: "https://images.pexels.com/photos/5632394/pexels-photo-5632394.jpeg",
+    imageAlt: "Jogo estratégico"
   },
   {
     id: 13,
@@ -194,7 +218,9 @@ export const questions: Question[] = [
     correctAnswer: 2,
     explanation: "A resposta correta é 2 garrafas. O total é 38 garrafas. Com 2 lacunas, temos 40 garrafas num recipiente 5x8, que permite encaixar todas as quatro caixas perfeitamente.",
     computationalThinking: "Esta tarefa é um Problema de Empacotamento. É um problema de otimização onde queremos encontrar a melhor solução. Pode ser muito difícil quando o número de caixas é grande. Usam-se algoritmos que fornecem soluções aproximadas suficientemente boas.",
-    difficulty: 'difícil'
+    difficulty: 'difícil',
+    imageUrl: "https://images.pexels.com/photos/5632393/pexels-photo-5632393.jpeg",
+    imageAlt: "Caixas empacotadas"
   },
   {
     id: 14,
@@ -209,7 +235,9 @@ export const questions: Question[] = [
     correctAnswer: 0,
     explanation: "A resposta correta é 14 castores. Existe apenas um caminho de 2 horas com 4 pedras (2 castores podem reutilizar este caminho). As restantes 23 pedras requerem 12 castores adicionais.",
     computationalThinking: "Os cientistas informáticos removem informação desnecessária e representam o problema como um grafo (nós e arestas). Os problemas que procuram a melhor solução são problemas de otimização, muito comuns em ciência de computadores.",
-    difficulty: 'difícil'
+    difficulty: 'difícil',
+    imageUrl: "https://images.pexels.com/photos/5632392/pexels-photo-5632392.jpeg",
+    imageAlt: "Castores no rio"
   },
   {
     id: 15,
@@ -224,6 +252,8 @@ export const questions: Question[] = [
     correctAnswer: 1,
     explanation: "A resposta correta é 10 jóias. Com as duas primeiras perguntas, Sara pergunta sobre 8 jóias diferentes. Com a terceira pergunta, inclui as duas candidatas e duas jóias não perguntadas.",
     computationalThinking: "Para resolver, precisamos encontrar a melhor estratégia (algoritmo) para Sara. Avaliamos o algoritmo para encontrar o número máximo para o qual funciona. Em geral, avaliamos algoritmos pelo tempo de execução e quantidade de espaço (memória) utilizado.",
-    difficulty: 'difícil'
+    difficulty: 'difícil',
+    imageUrl: "https://images.pexels.com/photos/5632391/pexels-photo-5632391.jpeg",
+    imageAlt: "Jóias e acessórios"
   }
 ];

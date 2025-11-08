@@ -7,4 +7,6 @@ export interface Question {
   explanation: string;
   computationalThinking: string;
   difficulty: 'fácil' | 'média' | 'difícil';
+  imageUrl?: string;
+  imageAlt?: string;
 }
